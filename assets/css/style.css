@@ -1,0 +1,458 @@
+@font-face {
+  font-family: SharpGrotesk;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/sharp-grotesk/SharpGrotesk-Book25.otf');
+}
+
+@font-face {
+  font-family: Matter;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/matter/Matter-Regular.otf');
+}
+
+html, body {
+  height: 100%;
+  background: #000;
+  color: #FFF;
+}
+
+.footer {
+  background-color: #111;
+  color: #FFF;
+  padding: 1rem 0 4rem;
+  text-align: center;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer .inspiration {
+  font-family: Matter, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.footer .reference {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  padding: 2rem 0;
+  text-transform: uppercase;
+}
+
+/* header */
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.header.scrolled {
+  background-color: #000;
+}
+
+
+
+
+
+.header.scrolled .menu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header .menu-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header .logo-wrapper {
+  position: absolute;
+  z-index: 6;
+  left: 50%;
+  top: 60px;
+  transform: translate(-50%);
+  max-width: 150px;
+  display: flex;
+  transition: top .5s;
+}
+
+.header.scrolled .logo-wrapper {
+  top: 16px;
+  transition: top .5s;
+}
+
+.header .logo-wrapper .logo {
+  transition: color .5s cubic-bezier(.35,.17,.25,1);
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #FFF;
+}
+
+.menu {
+  display: flex;
+  padding: 60px;
+  z-index: 5;
+  gap: 15px;
+  transition: color .5s cubic-bezier(.35,.17,.25,1), padding-top .5s, padding-bottom .5s;
+}
+
+.menu .button {
+  background: transparent;
+  color: inherit;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.2);
+  transition: border .5s cubic-bezier(.35,.17,.25,1);
+  border-radius: 48px;
+  flex-direction: row;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+.menu .button:hover {
+  border: 1px solid rgba(255,255,255,.6);
+}
+
+.menu .ionicon {
+  width: 20px;
+  height: 20px;
+}
+
+.menu .email {
+  width: 48px;
+  height: 48px;
+}
+
+.menu .phone {
+  width: 48px;
+  height: 48px;
+}
+
+.menu .navigation {
+  padding: 15px 30px;
+  text-transform: uppercase;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.section {
+  min-height: 100vh;
+  background-color: #000;
+}
+
+.section:nth-child(2n) {
+  background-color: #FFF;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-header .header-h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 6vw;
+  word-spacing: 99vw;
+}
+
+/* variant 1 */
+
+.variant-1 {
+  position: relative;
+}
+
+.variant-1::before,
+.variant-1::after {
+  content: 'variant 1';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #000;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-1::before {
+  left: 60px;
+}
+
+.variant-1::after {
+  right: 60px;
+}
+
+.variant-1 .container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.variant-1 .faq-list {
+  padding: 120px 0;
+}
+
+.variant-1 .faq-list .faq-item {
+  margin-bottom: 2rem;
+  border-top: 1px solid #333;
+}
+
+.faq-list .input {
+  display: none;
+}
+
+.faq-list .label {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  padding-block: 2rem;
+  padding-inline: 2rem;
+  color: #333;
+}
+
+.faq-list .content {
+  font-family: Matter, Helvetica, sans-serif;
+  color: #333;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+
+.faq-list .content p {
+  margin: 1rem 2rem;
+  font-family: inherit;
+}
+
+.input:checked ~ .content {
+  max-height: 60rem;
+  transition: max-height 0.3s ease-in;
+}
+
+/* variant 2 */
+
+.variant-2 {
+  position: relative;
+}
+
+.variant-2::before,
+.variant-2::after {
+  content: 'variant 2';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #FFF;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-2::before {
+  left: 60px;
+}
+
+.variant-2::after {
+  right: 60px;
+}
+
+.variant-2 .container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.variant-2 .faq-list {
+  padding: 120px 0;
+}
+
+.variant-2 .faq-list .faq-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  border-top: 9px solid #222;
+}
+
+.variant-2 .faq-list .label {
+  padding-block: 1rem;
+}
+
+.variant-2 .number {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 4rem;
+  margin: 3rem 0;
+  min-width: 12vw;
+}
+
+.variant-2 .description {
+  flex-grow: 1;
+}
+
+.variant-2 .label {
+  color: #FFF;
+}
+
+.variant-2 .content {
+  color: #FFF;
+}
+
+/* variant 3 */
+
+.variant-3 {
+  position: relative;
+  color: #111;
+}
+
+.variant-3::before,
+.variant-3::after {
+  content: 'variant 3';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #000;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-3::before {
+  left: 60px;
+}
+
+.variant-3::after {
+  right: 60px;
+}
+
+.variant-3 .header-h1 {
+  padding-top: 10%;
+  padding-left: 10%;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 4vw;
+}
+
+.variant-3 .faq-list {
+  display: flex;
+  max-width: 100vw;
+  overflow-y: hidden;
+  padding: 6rem 10% 3rem;
+  cursor: grab;
+}
+
+.variant-3 .faq-list.active {
+  cursor: grabbing;
+}
+
+.variant-3 .faq-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.variant-3 .faq-list::-webkit-scrollbar-track {
+  margin-left: 12rem;
+  margin-right: 12rem;
+}
+
+.variant-3 .faq-list::-webkit-scrollbar-thumb {
+  max-width: 100px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+.variant-3 .faq-item {
+  display: flex;
+  overflow: visible;
+  max-width: 400px;
+  margin-right: 20px;
+  flex-direction: column;
+  align-self: stretch;
+  flex: 0 0 auto;
+  border-top: 8px solid #191617;
+}
+
+.variant-3 .faq-item .caption {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.variant-3 .faq-item .caption .number {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 4.2rem;
+  line-height: 1;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.variant-3 .faq-item .caption .title {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  margin-left: 20px;
+  align-self: flex-start;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.variant-3 .faq-item p {
+  color: #111;
+  font-family: Matter, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+/* variant 4 */
+
+.variant-4 {
+  position: relative;
+}
+
+.variant-4::before,
+.variant-4::after {
+  content: 'variant 4';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #FFF;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-4::before {
+  left: 60px;
+}
+
+.variant-4::after {
+  right: 60px;
+}
+
+.variant-4 .header-h1 {
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 4vw;
+}
+
+.variant-4 .faq-list {
+  margin: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.variant-4 .faq-item {
+  width: 30%;
+  min-width: 375px;
+  margin-bottom: 4rem;
+}
+
+.variant-4 .title {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.variant-4 .description {
+  font-family: Matter, Helvetica, sans-serif;
+  line-height: 1.5;
+  opacity: 0.8;
+}
