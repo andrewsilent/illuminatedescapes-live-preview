@@ -18,6 +18,10 @@ html, body {
   color: #FFF;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .footer {
   background-color: #111;
   color: #FFF;
@@ -223,9 +227,12 @@ html, body {
 .faq-list .content {
   font-family: Matter, Helvetica, sans-serif;
   color: #333;
+  transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+}
+
+.variant-2 .faq-list .content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in, padding 0.3s ease-in;
 }
 
 .faq-list .content p {
@@ -455,4 +462,168 @@ html, body {
   font-family: Matter, Helvetica, sans-serif;
   line-height: 1.5;
   opacity: 0.8;
+}
+
+/* variant 5 */
+
+.variant-5 {
+  position: relative;
+}
+
+.variant-5::before,
+.variant-5::after {
+  content: 'variant 5';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #000;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-5::before {
+  left: 60px;
+}
+
+.variant-5::after {
+  right: 60px;
+}
+
+.variant-5 .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.variant-5 .header-h1 {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  color: #333;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.variant-5 .faq-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 200px;
+}
+
+.variant-5 .faq-item {
+  width: 50%;
+  padding: 0 5%;
+  cursor: pointer;
+}
+
+.variant-5 .faq-item:hover .label,
+.variant-5 .faq-item:hover .description {
+  background-color: #111;
+  color: #FFF;
+  transition: color .3s, background-color .3s;
+}
+
+.variant-5 .faq-item:nth-child(2n) {
+  margin-top: 150px;
+}
+
+.variant-5 .faq-item .label {
+  font-size: 2rem;
+  transition: color .3s, background-color .3s;
+}
+
+.variant-5 .description {
+  font-family: Matter, Helvetica, sans-serif;
+  color: #333;
+  padding: 1.5rem;
+  transition: color .3s, background-color .3s;
+}
+
+/* variant 6 */
+
+.variant-6 {
+  position: relative;
+}
+
+.variant-6::before,
+.variant-6::after {
+  content: 'variant 6';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #FFF;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-6::before {
+  left: 60px;
+}
+
+.variant-6::after {
+  right: 60px;
+}
+
+.variant-6 .container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.variant-6 .content {
+  display: flex;
+  justify-content: center;
+  padding: 200px 0;
+}
+
+.variant-6 .faq-list,
+.variant-6 .description-list {
+  position: relative;
+  width: 45%;
+}
+
+.variant-6 .faq-list .label {
+  font-size: 1.6rem;
+  color: #DDD;
+}
+
+.variant-6 .faq-item {
+  position: relative;
+  z-index: 2;
+}
+
+.variant-6 .faq-item.active .label {
+  color: #333;
+  transition: color .5s;
+}
+
+.variant-6 .description-item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+}
+
+.variant-6 .description-item.active {
+  color: #FFF;
+}
+
+.variant-6 .description-item p {
+  font-family: Matter, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.variant-6 .description-item.active {
+  visibility: visible;
+}
+
+.variant-6 .selected-item {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #DDD;
+  z-index: 1;
+  transition: top .5s, height .5s;
 }
