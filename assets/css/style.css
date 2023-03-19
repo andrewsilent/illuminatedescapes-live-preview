@@ -167,8 +167,24 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-family: SharpGrotesk, Helvetica, sans-serif;
+  color: #FFF;
   font-size: 6vw;
   word-spacing: 99vw;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes header-glowing {
+  from {
+    text-shadow: 0 0 15px #44F,
+    0 0 25px #22A,
+    0 0 35px #FFF
+  }
+  to {
+    text-shadow: 0 0 5px #B3E,
+    0 0 15px #91A,
+    0 0 35px #FFF
+  }
 }
 
 /* variant 1 */
