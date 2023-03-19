@@ -53,15 +53,12 @@ body {
   right: 0;
   background-color: transparent;
   z-index: 100;
+  animation: header-glowing 1.5s ease-in-out infinite alternate;
 }
 
 .header.scrolled {
   background-color: #000;
 }
-
-
-
-
 
 .header.scrolled .menu {
   padding-top: 10px;
@@ -113,7 +110,8 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255,255,255,.2);
-  transition: border .5s cubic-bezier(.35,.17,.25,1);
+  transition: box-shadow .3s;
+  box-shadow: 0 0 0 #000;
   border-radius: 48px;
   flex-direction: row;
   cursor: pointer;
@@ -121,7 +119,11 @@ body {
 }
 
 .menu .button:hover {
-  border: 1px solid rgba(255,255,255,.6);
+  transition: box-shadow .3s;
+  box-shadow:
+          0 0 20px #fff,
+          -10px 0 30px #f0f,
+          10px 0 30px #03f;
 }
 
 .menu .ionicon {
@@ -626,4 +628,99 @@ body {
   background-color: #DDD;
   z-index: 1;
   transition: top .5s, height .5s;
+}
+
+/* variant 7 */
+
+.variant-7 {
+  position: relative;
+  background-color: #000 !important;
+}
+
+.variant-7::before,
+.variant-7::after {
+  content: 'variant 7';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #FFF;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-7::before {
+  left: 60px;
+}
+
+.variant-7::after {
+  right: 60px;
+}
+
+.variant-7 .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.variant-7 .header-h1 {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  color: #FFF;
+  font-size: 4vw;
+  text-align: center;
+}
+
+.variant-7 .faq-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 200px;
+}
+
+.variant-7 .faq-item {
+  width: 50%;
+  padding: 0 5%;
+  cursor: pointer;
+}
+
+.variant-7 .faq-item .label {
+  color: #999;
+}
+
+.variant-7 .faq-item:hover .label,
+.variant-7 .faq-item:hover .description {
+  color: #FFF;
+}
+
+.variant-7 .faq-item .wrapper {
+  border-radius: 2rem;
+  transition: box-shadow .2s;
+  box-shadow: 0 0 50px #000;
+}
+
+.variant-7 .faq-item:hover .wrapper {
+  transition: box-shadow .2s;
+  background-color: #111;
+  box-shadow:
+          0 0 50px #fff,
+          -20px 0 80px #f0f,
+          20px 0 80px #03f;
+}
+
+.variant-7 .faq-item:nth-child(2n) {
+  margin-top: 150px;
+}
+
+.variant-7 .faq-item .label {
+  font-size: 2rem;
+  transition: color .3s, background-color .3s;
+}
+
+.variant-7 .description {
+  font-family: Matter, Helvetica, sans-serif;
+  color: #999;
+  background-color: transparent;
+  padding: 1.5rem;
+  transition: color .3s, background-color .3s;
+  position: relative;
+  z-index: 10;
 }
