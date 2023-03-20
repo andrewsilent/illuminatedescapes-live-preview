@@ -230,6 +230,10 @@ body {
   display: none;
 }
 
+.faq-list .label {
+  padding-block: 2rem;
+}
+
 .faq-list .label,
 .faq-list .label p {
   cursor: pointer;
@@ -239,7 +243,6 @@ body {
   font-size: 22px;
   text-transform: uppercase;
   font-family: SharpGrotesk, Helvetica, sans-serif;
-  padding-block: 2rem;
   padding-inline: 2rem;
   color: #333;
 }
@@ -810,6 +813,10 @@ body {
   padding: 200px 0;
 }
 
+.variant-6-2 .faq-list {
+  width: 100%;
+}
+
 .variant-6-2 .faq-list .label p {
   font-size: 1.4rem;
   color: #DDD;
@@ -822,7 +829,7 @@ body {
   content: '';
   position: absolute;
   top: 50%;
-  right: -20px;
+  right: -0.5rem;
   transform: translateY(-50%) rotate(180deg);
   z-index: 1;
   transition: top .5s, height .5s, transform .5s;
@@ -856,6 +863,8 @@ body {
   font-size: 1.2rem;
   padding: 2rem;
   color: transparent;
+  position: absolute;
+  transform: translateY(-50%);
 }
 
 .input:checked ~ .label p {
