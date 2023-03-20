@@ -153,10 +153,6 @@ body {
   background-color: #000;
 }
 
-.section:nth-child(2n) {
-  background-color: #FFF;
-}
-
 .page-header {
   display: flex;
   justify-content: center;
@@ -191,6 +187,7 @@ body {
 
 .variant-1 {
   position: relative;
+  background-color: #FFF;
 }
 
 .variant-1::before,
@@ -220,6 +217,10 @@ body {
   padding: 120px 0;
 }
 
+.variant-1 .link {
+  color: #27F;
+}
+
 .variant-1 .faq-list .faq-item {
   margin-bottom: 2rem;
   border-top: 1px solid #333;
@@ -229,7 +230,8 @@ body {
   display: none;
 }
 
-.faq-list .label {
+.faq-list .label,
+.faq-list .label p {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -248,7 +250,8 @@ body {
   transition: max-height 0.3s ease-in, padding 0.3s ease-in;
 }
 
-.variant-2 .faq-list .content {
+.variant-2 .faq-list .content,
+.variant-2-2 .faq-list .content {
   max-height: 0;
   overflow: hidden;
 }
@@ -271,7 +274,7 @@ body {
 
 .variant-2::before,
 .variant-2::after {
-  content: 'variant 2';
+  content: 'variant 2.1';
   display: block;
   position: absolute;
   top: 60px;
@@ -300,7 +303,6 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 0;
-  border-top: 9px solid #222;
 }
 
 .variant-2 .faq-list .label {
@@ -326,10 +328,75 @@ body {
   color: #FFF;
 }
 
+
+/* variant 2.2 */
+
+.variant-2-2 {
+  position: relative;
+}
+
+.variant-2-2::before,
+.variant-2-2::after {
+  content: 'variant 2.2';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #FFF;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-2-2::before {
+  left: 60px;
+}
+
+.variant-2-2::after {
+  right: 60px;
+}
+
+.variant-2-2 .container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.variant-2-2 .faq-list {
+  padding: 120px 0;
+}
+
+.variant-2-2 .faq-list .faq-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  border-top: 1px solid #333;
+}
+
+.variant-2-2 .faq-list .label {
+  padding-block: 1rem;
+}
+
+.variant-2-2 .number {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 4rem;
+  margin: 3rem 0;
+  min-width: 12vw;
+}
+
+.variant-2-2 .description {
+  flex-grow: 1;
+}
+
+.variant-2-2 .label {
+  color: #FFF;
+}
+
+.variant-2-2 .content {
+  color: #FFF;
+}
+
 /* variant 3 */
 
 .variant-3 {
   position: relative;
+  background-color: #FFF;
   color: #111;
 }
 
@@ -390,18 +457,17 @@ body {
   overflow: visible;
   max-width: 400px;
   margin-right: 20px;
-  flex-direction: column;
   align-self: stretch;
   flex: 0 0 auto;
   border-top: 8px solid #191617;
 }
 
 .variant-3 .faq-item .caption {
-  display: flex;
   padding: 1rem 0;
 }
 
-.variant-3 .faq-item .caption .number {
+.variant-3 .faq-item .number {
+  padding-top: 1rem;
   font-family: SharpGrotesk, Helvetica, sans-serif;
   font-size: 4.2rem;
   line-height: 1;
@@ -410,18 +476,33 @@ body {
   -webkit-text-stroke-color: black;
 }
 
-.variant-3 .faq-item .caption .title {
-  font-family: SharpGrotesk, Helvetica, sans-serif;
-  margin-left: 20px;
-  align-self: flex-start;
-  font-size: 1.4em;
-  text-transform: uppercase;
+.variant-3 .faq-item .label3:hover {
+  cursor: pointer;
 }
 
-.variant-3 .faq-item p {
-  color: #111;
+.input3 {
+  display: none;
+}
+
+.input3:checked ~  p {
+  color: #333 !important;
+  transition: color .3s;
+}
+
+.variant-3 .label3 p {
+  font-family: SharpGrotesk, Helvetica, sans-serif;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin-left: 1rem;
+}
+
+.variant-3 .caption > p {
+  margin-left: 20px;
+  margin-top: 1rem;
+  color: transparent;
   font-family: Matter, Helvetica, sans-serif;
   line-height: 1.5;
+  transition: color .3s;
 }
 
 /* variant 4 */
@@ -486,6 +567,7 @@ body {
 
 .variant-5 {
   position: relative;
+  background-color: #FFF;
 }
 
 .variant-5::before,
@@ -564,7 +646,7 @@ body {
 
 .variant-6::before,
 .variant-6::after {
-  content: 'variant 6';
+  content: 'variant 6.1';
   display: block;
   position: absolute;
   top: 60px;
@@ -594,12 +676,19 @@ body {
 .variant-6 .faq-list,
 .variant-6 .description-list {
   position: relative;
+}
+
+.variant-6 .faq-list {
   width: 45%;
+}
+
+.variant-6 .description-list {
+  width: 50%;
 }
 
 .variant-6 .faq-list .label {
   font-size: 1.6rem;
-  color: #DDD;
+  color: #BBB;
 }
 
 .variant-6 .faq-item {
@@ -608,7 +697,7 @@ body {
 }
 
 .variant-6 .faq-item.active .label {
-  color: #333;
+  color: #FFF;
   transition: color .5s;
 }
 
@@ -638,12 +727,112 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #DDD;
+  right: 30px;
+  transform: translateY(-50%);
   z-index: 1;
   transition: top .5s, height .5s;
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 35px solid #FFF;
+}
+
+/* variant 6.2 */
+
+.variant-6-2 {
+  position: relative;
+}
+
+.variant-6-2::before,
+.variant-6-2::after {
+  content: 'variant 6.2';
+  display: block;
+  position: absolute;
+  top: 60px;
+  color: #FFF;
+  font-family: Matter, Helvetica, sans-serif;
+}
+
+.variant-6-2::before {
+  left: 60px;
+}
+
+.variant-6-2::after {
+  right: 60px;
+}
+
+.variant-6-2 .container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.variant-6-2 .content {
+  display: flex;
+  justify-content: center;
+  padding: 200px 0;
+}
+
+.variant-6-2 .faq-list .label p {
+  font-size: 1.4rem;
+  color: #DDD;
+  display: inline-block;
+  position: relative;
+}
+
+.faq-list .label p:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%) rotate(180deg);
+  z-index: 1;
+  transition: top .5s, height .5s, transform .5s;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid #FFF;
+}
+
+.variant-6-2 .faq-item {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.variant-6-2 .faq-item .description {
+  width: 50%;
+  position: relative;
+}
+
+.variant-6-2 .faq-item .label {
+  width: 45%;
+  position: relative;
+}
+
+.variant-6-2 .description p {
+  font-family: Matter, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: transparent;
+}
+
+.input:checked ~ .label p {
+  transition: max-height 0.3s ease-in;
+}
+
+.input:checked ~ .label p:before {
+  transform: translateY(-50%) rotate(90deg);
+  transition: transform .5s;
+}
+
+.input:checked ~ .description p {
+  color: #EEE;
+  transition: max-height 0.3s ease-in, color .3s;
 }
 
 /* variant 7 */

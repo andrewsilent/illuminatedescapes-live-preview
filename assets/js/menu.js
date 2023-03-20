@@ -52,8 +52,7 @@ function start () {
 
   const setSelector = (e) => {
     e.classList.add('active')
-    itemSelector.style.top = `${e.offsetTop}px`
-    itemSelector.style.height = `${e.offsetHeight}px`
+    itemSelector.style.top = `${e.offsetTop+e.offsetHeight/2}px`
   }
 
   const setDescriptor = (e, i) => {
