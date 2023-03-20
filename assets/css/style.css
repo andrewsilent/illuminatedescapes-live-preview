@@ -429,7 +429,7 @@ body {
   display: flex;
   max-width: 100vw;
   overflow-y: hidden;
-  padding: 6rem 10% 3rem;
+  padding: 6rem 10% 1rem;
   cursor: grab;
 }
 
@@ -469,11 +469,15 @@ body {
 .variant-3 .faq-item .number {
   padding-top: 1rem;
   font-family: SharpGrotesk, Helvetica, sans-serif;
-  font-size: 4.2rem;
+  font-size: 4rem;
   line-height: 1;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
+}
+
+.variant-3 .faq-item .label3 {
+  position: relative;
 }
 
 .variant-3 .faq-item .label3:hover {
@@ -484,16 +488,49 @@ body {
   display: none;
 }
 
-.input3:checked ~  p {
+.input3:checked ~ p {
   color: #333 !important;
   transition: color .3s;
 }
 
+.variant-3 .label3:before,
+.variant-3 .label3:after {
+  display: block;
+  content: '';
+  position: absolute;
+  transform: rotate(90deg);
+  z-index: 1;
+  transition: top .5s, height .5s, transform .5s;
+  width: 0;
+  height: 0;
+}
+
+.variant-3 .label3:before {
+  top: 6px;
+  right: 6px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid #333;
+}
+
+.variant-3 .label3:after {
+  top: 7px;
+  right: 8px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid #FFF;
+}
+
+.input3:checked ~ .label3:before,
+.input3:checked ~ .label3:after {
+  transform: rotate(180deg);
+}
+
 .variant-3 .label3 p {
   font-family: SharpGrotesk, Helvetica, sans-serif;
-  font-size: 1.4em;
+  font-size: 1.25em;
   text-transform: uppercase;
-  margin-left: 1rem;
+  margin: 0 1rem;
 }
 
 .variant-3 .caption > p {
