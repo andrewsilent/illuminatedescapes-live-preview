@@ -41,42 +41,24 @@ function start () {
     console.log(walk);
   });
 
-  const v6items = document.querySelectorAll('.variant-6 .faq-item')
-  const v6descriptions = document.querySelectorAll('.variant-6 .description-item')
-  const itemSelector = document.createElement('div')
-  itemSelector.classList.add('selected-item')
-  document.querySelector('.variant-6 .faq-list').appendChild(itemSelector)
-  const descriptionSelector = document.createElement('div')
-  descriptionSelector.classList.add('selected-description')
-  document.querySelector('.variant-6 .faq-list').appendChild(descriptionSelector)
+  const items = document.querySelectorAll('.variant-6 .item')
+  const numbers = document.querySelectorAll('.variant-6 .number-wrapper')
+  const labels = document.querySelectorAll('.variant-6 .label')
+  const selector = document.createElement('div')
+  selector.classList.add('selector')
+  document.querySelector('.variant-6 .list').appendChild(selector)
+  const pseudo = window.getComputedStyle(selector, ':before')
+  const height = parseInt(pseudo.height)
 
-  const setSelector = (e) => {
-    e.classList.add('active')
-    itemSelector.style.top = `${e.offsetTop+e.offsetHeight/2}px`
+  const onItemClick = (e, i) => {
+    selector.style.opacity = 1
+    selector.style.top = `${items[i].offsetTop + e.offsetHeight/2 - height/2}px`
+    selector.style.left = `${items[i].offsetLeft+e.offsetWidth+numbers[i].offsetLeft+numbers[i].offsetWidth}px`
   }
 
-  const setDescriptor = (e, i) => {
-    v6descriptions[i].style.top = `${e.offsetTop+e.offsetHeight/2 - v6descriptions[i].offsetHeight/2}px`
-    v6descriptions[i].classList.add('active')
-  }
-
-  const onFaqItemClick = (e, i) => {
-    faqItemsClear()
-    setSelector(e)
-    setDescriptor(e, i)
-  }
-
-  const faqItemsClear = () => {
-    v6items.forEach((e, i) => {
-      e.classList.remove('active')
-      v6descriptions[i].classList.remove('active')
-    })
-  }
-
-  v6items.forEach((e, i) => {
-    e.addEventListener('click', () => onFaqItemClick(e, i))
-    setSelector(v6items[0])
-    setDescriptor(v6items[0], 0)
+  labels.forEach((e, i) => {
+    e.addEventListener('click', () => onItemClick(e, i))
+    // onItemClick(labels[0], 0)
   })
 
 }
